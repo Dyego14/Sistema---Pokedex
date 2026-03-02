@@ -1,0 +1,149 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1675ce, #d32f2f);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título */
+h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Container principal */
+.pokedex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Card do Pokémon */
+.pokemon {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.pokemon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Imagem */
+.pokemon img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Nome */
+.pokemon h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+/* Número */
+.pokemon p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Barra de busca */
+#search {
+    padding: 12px;
+    width: 300px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Animação ao aparecer */
+.pokemon {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    animation: aparecer 0.3s ease-in-out;
+}
+
+#close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.pokemon {
+    position: relative;
+    overflow: hidden;
+}
+
+.info-extra {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.pokemon:hover .info-extra {
+    opacity: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+
